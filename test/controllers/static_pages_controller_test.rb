@@ -7,6 +7,11 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
     assert_select "title", "Home | Ruby on Rails Tutorial Sample App"
   end
 
+    test "should get root" do
+    get '/'
+    assert_response :success
+  end
+
   test "should get help" do
     get static_pages_help_url
     assert_response :success
